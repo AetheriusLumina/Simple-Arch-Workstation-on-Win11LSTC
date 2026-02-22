@@ -221,11 +221,11 @@ New-NetFirewallRule -DisplayName "WSL_SSH" -Direction Inbound -Action Allow -Pro
 
 找到WSL setting软件，点击networkingMode，开启mirror镜像模式
 
-![2b88d2bf51dccbc7ce2c23b0f3d8d25f](2b88d2bf51dccbc7ce2c23b0f3d8d25f.png)
+![image1](./images/image1.png)
 
 
 
-![d7d60a171825989207c438317858477b](d7d60a171825989207c438317858477b.jpg)
+![image2](./images/image2.jpg)
 
 此时 SSH 服务启动成功，现在需要返回WSL查询IP
 
