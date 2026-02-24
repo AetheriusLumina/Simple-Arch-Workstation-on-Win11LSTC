@@ -1,18 +1,18 @@
-# Windows 11 LSTC Workstation Guide
+<h1 align="center">Windows 11 LSTC Workstation Guide</h1>
 
-## 系统设置
+## 1 系统设置
 
 到控制面板的程序与功能里面勾选：
 
-###### 适用于 Windows 的 Linux 子系统 
+###### a. 适用于 Windows 的 Linux 子系统 
 
-###### Hyper-V 
+###### b. Hyper-V 
 
-###### 虚拟化平台
+###### c. 虚拟化平台
 
 打开后重启电脑
 
-## 安装 WSL （Win Terminal）
+## 2 安装 WSL （Win Terminal）
 
 用管理员打开 Windows Terminal 升级内核
 
@@ -52,7 +52,7 @@ pacman --help
 
 打开文件浏览器，可以看到 linux-archlinux 文件
 
-## 设置 WSL （WSL Terminal）
+## 3 设置 WSL （WSL Terminal）
 
 查看当前 Linux 用户与当前路径
 
@@ -182,7 +182,7 @@ wsl --shutdown
 wsl
 ```
 
-## 基于 SSH 设定客户端（WSL Terminal）
+## 4 基于 SSH 设定客户端（WSL Terminal）
 
 安装必要的包
 
@@ -192,13 +192,13 @@ sudo pacman -S base-devel openssh git
 
 配置 sshd 服务文件。这个文件中可以配置：
 
-###### sshd 的监听端口（别人 ssh 登入时通过 -p 指定的端口，默认 22）
+###### a. sshd 的监听端口（别人 ssh 登入时通过 -p 指定的端口，默认 22）
 
-###### sshd 的监听 IP（默认是 0.0.0.0，即所有 IP） 
+###### b. sshd 的监听 IP（默认是 0.0.0.0，即所有 IP） 
 
-###### 禁止/启用登录 root 用户 
+###### c. 禁止/启用登录 root 用户 
 
-###### 禁止/启用密码或密钥登录
+###### d. 禁止/启用密码或密钥登录
 
 ```
 sudo vim /etc/ssh/sshd_config
@@ -229,7 +229,7 @@ wsl --shutdown
 wsl
 ```
 
-## 基于 Git 的简易项目仓库构建（WSL Terminal）
+## 5 基于 Git 的简易项目仓库构建（WSL Terminal）
 
 如果想要将本地项目上传至 GitHub，可使用 git 完成
 
@@ -330,7 +330,7 @@ git push origin main
 
 查看 GitHub 仓库是否有上传的项目，之后每一次修改本地项目都可以通过最后三步进行更新仓库操作
 
-## 基于 Tailscale 的异地终端远程连接（WSL Terminal）
+## 6 基于 Tailscale 的异地终端远程连接（WSL Terminal）
 
 确保在第四节我们已经将 sshd 服务启动
 
@@ -374,9 +374,8 @@ ssh elysia@服务器域名
 
 注：如果你更习惯操作图形界面，可以搭配使用远程桌面工具（如 ToDesk、向日葵、RustDesk、Anydesk 等）为了保证在外能随时稳定连上工作站，请务必提前做好以下“防失联”设置：
 
-###### 在电源管理中设置禁止电脑休眠和息屏，并关闭“快速启动”功能
+###### a. 在电源管理中设置禁止电脑休眠和息屏，并关闭“快速启动”功能
 
-###### 为了防止重启后卡在锁屏界面，最好取消系统的开机密码（设置自动登录），并将远程软件和 WSL 设置为开机自启动并赋予所有最高权限（防止被系统弹窗卡死）
+###### b. 为了防止重启后卡在锁屏界面，最好取消系统的开机密码（设置自动登录），并将远程软件和 WSL 设置为开机自启动并赋予所有最高权限（防止被系统弹窗卡死）
 
-###### 建议在主板 BIOS 中开启定时开机或来电唤醒功能（可配合智能插座使用），以应对突发死机需要强制硬重启的情况
-
+###### c. 建议在主板 BIOS 中开启定时开机或来电唤醒功能（可配合智能插座使用），以应对突发死机需要强制硬重启的情况
